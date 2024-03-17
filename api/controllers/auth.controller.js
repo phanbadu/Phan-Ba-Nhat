@@ -19,7 +19,8 @@ export const signup = async (req, res, next) => {
 
     try {
         await newUser.save();
-        res.json({ message: "Signup successfuly!" });
+        // res.json({ message: "Signup successfuly!" });
+        res.status(200).cookie("access_token", "token", { httpOnly: true }).json("rest");
     } catch (error) {
         next(error);
     }
