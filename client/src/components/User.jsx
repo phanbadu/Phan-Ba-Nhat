@@ -10,7 +10,7 @@ export default function User() {
                 alt="user"
             />
             <h2 className="font-semibold text-xl mt-4 text-gray-800">Phan Bá Nhất</h2>
-            <h3 className="font-medium mt-1 text-md text-gray-500">storyccccccccccccccccc</h3>
+            <h3 className="font-medium mt-1 text-md text-gray-500">story</h3>
             <ul className="flex mt-5 gap-4 text-gray-500">
                 <li>
                     <FaFacebook />

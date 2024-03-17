@@ -11,7 +11,7 @@ export default function Header() {
     }, [location.pathname]);
 
     return (
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center bg-white py-5 px-5 rounded-xl">
             <ul className="flex gap-14 flex-auto gap-90 text-lg font-semibold">
                 <Link
                     to="/"
