@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 export default function SignIn() {
+    
     return (
         <div className="w-full flex items-center justify-center h-dvh bg-slate-400">
             <form className="w-96 h-96 bg-white flex items-center justify-center flex-col gap-5 p-12 shadow-2xl rounded-xl">
