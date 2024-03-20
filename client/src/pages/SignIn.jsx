@@ -70,7 +70,7 @@ export default function SignIn() {
                     className="w-full hover:bg-[#3E50B4] ease-out duration-200 hover:text-white text-center px-4 py-2 font-semibold text-md rounded-md border "
                 >
                     {loading ? (
-                        <div className="flex justify-center items-center">
+                        <div className="flex py-2 justify-center items-center">
                             <AiOutlineLoading3Quarters className="animate-spin text-md" />
                         </div>
                     ) : (

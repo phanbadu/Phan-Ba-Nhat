@@ -7,7 +7,7 @@ import Posts from '../components/Posts';
 
 export default function Home() {
     return (
-        <div className="w-full h-full py-10 bg-slate-200 py-3xl pb-96">
+        <div className="w-full h-full dark:bg-slate-950 py-10 bg-slate-200 py-3xl pb-96">
             <div
                 className="
                 container 
