@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
     const [formData, setFormData] = useState({});
@@ -9,20 +9,20 @@ export default function SignUp() {
     const navigate = useNavigate();
 
     const handleChange = (e) => {
-        setFormData({ ...formData,[e.target.id]: e.target.value.trim() });
+        setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!formData.username || !formData.email || !formData.password) {
-            return setErrorMessage("Please fill out all fields.");
+            return setErrorMessage('Vui lòng nhập đầy đủ thông tin!');
         }
         try {
             setLoading(true);
             setErrorMessage(null);
             const res = await fetch('/api/auth/signup', {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             });
 
@@ -33,45 +33,55 @@ export default function SignUp() {
             }
             setLoading(false);
             if (res.ok) {
-                navigate("/sign-in");
+                navigate('/sign-in');
             }
         } catch (error) {
             setErrorMessage(error.message);
             setLoading(false);
         }
-    }
+    };
 
     return (
-        <div className="w-full flex items-center justify-center h-dvh bg-slate-400">
-            <form onSubmit={handleSubmit} className="w-96 h-96 bg-white flex items-center justify-center flex-col gap-5 p-12 shadow-2xl rounded-xl">
+        <div className="w-full flex items-center justify-center h-dvh bg-gradient-to-r from-blue to-rose p-5">
+            <form
+                onSubmit={handleSubmit}
+                className="w-96 bg-white flex items-center justify-center flex-col gap-5 p-12 shadow-2xl rounded-xl"
+            >
+                <h1 className="text-xl mb-5 text-green-700 border-b-2 border-green-700">ĐĂNG KÝ</h1>
                 <input
                     onChange={handleChange}
-                    class="w-full px-4 py-2 text-md outline-none rounded-md border-dashed border-2 border-indigo-600"
-                    placeholder="Username"
+                    class="focus:border-teal-300 ease-out duration-500 w-full px-4 py-2 text-md outline-none rounded-md border-solid border"
+                    placeholder="Nhập username"
                     type="text"
                     id="username"
                 />
                 <input
                     onChange={handleChange}
-                    class="w-full px-4 py-2 text-md outline-none rounded-md border-dashed border-2 border-indigo-600"
-                    placeholder="Email"
+                    class="focus:border-teal-300 ease-out duration-500 w-full px-4 py-2 text-md outline-none rounded-md border"
+                    placeholder="Nhập email"
                     type="email"
                     id="email"
                 />
                 <input
                     onChange={handleChange}
-                    class="w-full px-4 py-2 text-md outline-none rounded-md border-dashed border-2 border-indigo-600"
-                    placeholder="Password"
+                    class="focus:border-teal-300 ease-out duration-500 w-full px-4 py-2 text-md outline-none rounded-md border"
+                    placeholder="Nhập password"
                     type="password"
                     id="password"
                 />
                 <button
                     type="submit"
-                    className="w-full text-center px-4 py-2 font-semibold text-md rounded-md border-dashed border-2 border-indigo-600"
+                    className="w-full hover:bg-[#3E50B4] ease-out duration-200 hover:text-white text-center px-4 py-2 font-semibold text-md rounded-md border"
                 >
-                    Sing Up
+                    {loading ? 'Loading...' : 'Đăng ký'}
                 </button>
-                <Link to="/sign-in" className="underline text-blue-400">Sign in</Link>
+                <div className="mt-3 text-sm">
+                    <span>Bạn đã có tài khoản ?</span>
+                    <Link to="/sign-in" className="hover:underline text-sky-400 ml-2">
+                        Đăng nhập
+                    </Link>
+                </div>
+                {errorMessage && <h1 className="text-md text-red-700">{errorMessage}</h1>}
             </form>
         </div>
     );

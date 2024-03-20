@@ -11,6 +11,8 @@ module.exports = {
         primary: 'rgba(var(--color-primary))',
         secondary: 'rgba(var(--color-secondary), 0.7)',
         hint: 'rgba(var(--color-hint), 0.3)',
+        rose: 'rgba(var(--bg-gradient-rose), 0.5)',
+        blue: 'rgba(var(--bg-gradient-blue), 0.5)',
       }
     },
   },

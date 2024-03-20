@@ -1,6 +1,3 @@
-import { AiFillLike } from "react-icons/ai";
-import { FaComment } from "react-icons/fa";
-import { FaEarthAfrica } from "react-icons/fa6";
 
 export default function PopularPosts() {
     return (

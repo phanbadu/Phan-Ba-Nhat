@@ -19,8 +19,7 @@ export const signup = async (req, res, next) => {
 
     try {
         await newUser.save();
-        // res.json({ message: "Signup successfuly!" });
-        res.status(200).cookie("access_token", "token", { httpOnly: true }).json("rest");
+        res.json({ message: "Signup successfuly!" });
     } catch (error) {
         next(error);
     }
@@ -28,7 +27,7 @@ export const signup = async (req, res, next) => {
 
 export const signin = async (req, res, next) => {
     const { email, password } = req.body;
-
+    console.log(email, password);
     if (!email || !password || email === "" || password === "") {
         next(errorHandler(400, "All fields are required"));
     }
