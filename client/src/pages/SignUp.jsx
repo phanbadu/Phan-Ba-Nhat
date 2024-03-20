@@ -50,21 +50,21 @@ export default function SignUp() {
                 <h1 className="text-xl mb-5 text-green-700 border-b-2 border-green-700">ĐĂNG KÝ</h1>
                 <input
                     onChange={handleChange}
-                    class="focus:border-teal-300 ease-out duration-500 w-full px-4 py-2 text-md outline-none rounded-md border-solid border"
+                    className="focus:border-teal-300 ease-out duration-500 w-full px-4 py-2 text-md outline-none rounded-md border-solid border"
                     placeholder="Nhập username"
                     type="text"
                     id="username"
                 />
                 <input
                     onChange={handleChange}
-                    class="focus:border-teal-300 ease-out duration-500 w-full px-4 py-2 text-md outline-none rounded-md border"
+                    className="focus:border-teal-300 ease-out duration-500 w-full px-4 py-2 text-md outline-none rounded-md border"
                     placeholder="Nhập email"
                     type="email"
                     id="email"
                 />
                 <input
                     onChange={handleChange}
-                    class="focus:border-teal-300 ease-out duration-500 w-full px-4 py-2 text-md outline-none rounded-md border"
+                    className="focus:border-teal-300 ease-out duration-500 w-full px-4 py-2 text-md outline-none rounded-md border"
                     placeholder="Nhập password"
                     type="password"
                     id="password"

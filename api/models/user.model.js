@@ -18,7 +18,11 @@ const userSchema = new mongoose.Schema(
         },
         profilePicture: {
             type: String,
-            default: "https://images.hdqwalls.com/wallpapers/bthumb/satoru-gojo-28.jpg",
+            default: "https://images8.alphacoders.com/123/1236170.jpg",
+        },
+        story: {
+            type: String,
+            default: "Zennin",
         },
         isAdmin: {
             type: Boolean,

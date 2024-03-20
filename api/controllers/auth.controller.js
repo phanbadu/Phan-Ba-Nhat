@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 
 export const signup = async (req, res, next) => {
     const { username, email, password } = req.body;
+    console.log(req.body);
     if (!username || !email || !password || username === "" || email === "" || password === "") {
         next(errorHandler(400, "All fields are required"));
     }
@@ -21,13 +22,13 @@ export const signup = async (req, res, next) => {
         await newUser.save();
         res.json({ message: "Signup successfuly!" });
     } catch (error) {
+        console.log(error);
         next(error);
     }
 };
 
 export const signin = async (req, res, next) => {
     const { email, password } = req.body;
-    console.log(email, password);
     if (!email || !password || email === "" || password === "") {
         next(errorHandler(400, "All fields are required"));
     }
