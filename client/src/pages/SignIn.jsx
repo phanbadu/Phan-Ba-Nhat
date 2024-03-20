@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signInFailure, signInStart, signInSuccess } from '../redux/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import OAuthGoogle from '../components/OAuthGoogle';
+import OAuthFacebook from '../components/OAuthFacebook';
 
 export default function SignIn() {
     const dispatch = useDispatch();
@@ -46,7 +48,7 @@ export default function SignIn() {
         <div className="w-full flex items-center justify-center h-dvh bg-gradient-to-r from-blue to-rose">
             <form
                 onSubmit={handleSubmit}
-                className="w-96 h-96 bg-white flex items-center justify-center flex-col gap-5 p-12 shadow-2xl rounded-xl"
+                className="w-96 bg-white flex items-center justify-center flex-col gap-5 p-12 shadow-2xl rounded-xl"
             >
                 <h1 className="text-xl mb-5 text-green-700 border-b-2 border-green-700">ĐĂNG NHẬP</h1>
                 <input
@@ -65,7 +67,7 @@ export default function SignIn() {
                 />
                 <button
                     type="submit"
-                    className="w-full h-24 hover:bg-[#3E50B4] ease-out duration-200 hover:text-white text-center px-4 py-2 font-semibold text-md rounded-md border "
+                    className="w-full hover:bg-[#3E50B4] ease-out duration-200 hover:text-white text-center px-4 py-2 font-semibold text-md rounded-md border "
                 >
                     {loading ? (
                         <div className="flex justify-center items-center">
@@ -75,6 +77,8 @@ export default function SignIn() {
                         'Đăng nhập'
                     )}
                 </button>
+                <OAuthGoogle />
+                <OAuthFacebook />
                 <div className="mt-3 text-sm">
                     <span>Bạn chưa có tài khoản ?</span>
                     <Link to="/sign-up" className="hover:underline text-sky-400 ml-2">
