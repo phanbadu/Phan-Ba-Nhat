@@ -23,6 +23,9 @@ export default function Home() {
                     <div className="w-8/12">
                         <User />
                         <Posts />
+                        <Posts />
+                        <Posts />
+
                     </div>
                     <div className="w-4/12 flex flex-col gap-5">
                         <CreatePost />

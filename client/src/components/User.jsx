@@ -9,9 +9,9 @@ export default function User() {
                 src="https://images.hdqwalls.com/wallpapers/bthumb/satoru-gojo-28.jpg"
                 alt="user"
             />
-            <h2 className="font-semibold text-xl mt-4 text-gray-800">Phan Bá Nhất</h2>
-            <h3 className="font-medium mt-1 text-md text-gray-500">story</h3>
-            <ul className="flex mt-5 gap-4 text-gray-500">
+            <h2 className="font-semibold text-3xl mt-4 text-[#3E50B4]">Phan Bá Nhất</h2>
+            <h3 className="font-medium mt-1 text-md text-secondary">story</h3>
+            <ul className="flex mt-5 gap-4 text-hint">
                 <li>
                     <FaFacebook />
                 </li>

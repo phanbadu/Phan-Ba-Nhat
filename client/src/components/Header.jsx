@@ -11,41 +11,43 @@ export default function Header() {
         setTab(location.pathname);
     }, [location.pathname]);
 
-   
-
     return (
         <div className="flex justify-between items-center bg-white py-5 px-5 rounded-xl">
             <ul className="flex gap-14 flex-auto gap-90 text-lg font-semibold">
                 <Link
                     to="/"
-                    className={`${tab === '/' && 'bg-rose-500 rounded-lg text-white'} flex items-center px-4 h-10`}
+                    className={`${
+                        tab === '/' && 'border-b-2 text-[#FF3F80] border-[#FF3F80] text-primary'
+                    } flex items-center px-4 h-10`}
                 >
                     <li>Home</li>
                 </Link>
                 <Link
                     to="/friends"
                     className={`${
-                        tab === '/friends' && 'bg-rose-500 rounded-lg text-white'
+                        tab === '/friends' && 'border-b-2 text-[#FF3F80] border-[#FF3F80] text-primary'
                     } flex items-center px-4 h-10`}
                 >
                     <li>Friends</li>
                 </Link>
                 <Link
                     to="/users"
-                    className={`${tab === '/users' && 'bg-rose-500 rounded-lg text-white'} flex items-center px-4 h-10`}
+                    className={`${
+                        tab === '/users' && 'border-b-2 text-[#FF3F80] border-[#FF3F80] text-primary'
+                    } flex items-center px-4 h-10`}
                 >
                     <li>Users</li>
                 </Link>
             </ul>
             <div className="text-xl flex gap-10 relative">
-                <div className="flex-1 flex rounded-lg overflow-hidden border-dotted border-2 border-gray-600">
+                <div className="flex-1 flex rounded-lg overflow-hidden border border-[#FF3F80]">
                     <input
-                        className="bg-white text-sm outline-none w-52 rounded-bl-lg h-full px-2"
+                        className="bg-white outline-none w-52 text-sm rounded-bl-lg h-full px-2"
                         type="text"
-                        placeholder="Search...."
+                        placeholder="Tìm kiếm một điều gì đó ?"
                     />
                     <button className="hover:bg-gray-100 bg-white rounded-tr-lg rounded-br-lg px-4">
-                        <CiSearch className="font-semibold" />
+                        <CiSearch className="font-semibold  text-[#FF3F80]" />
                     </button>
                 </div>
                 <img
@@ -55,7 +57,9 @@ export default function Header() {
                     alt="user"
                 />
                 {logout && (
-                    <div className='font-medium ease-in active:scale-x-95 hover:bg-gray-100 absolute top-16 text-sm left-56 py-1 cursor-pointer rounded-md bg-white w-32 text-center'>Đăng xuất</div>
+                    <div className="font-medium ease-in active:scale-x-95 hover:bg-gray-100 absolute top-16 text-sm left-56 py-1 cursor-pointer rounded-md bg-white w-32 text-center">
+                        Đăng xuất
+                    </div>
                 )}
             </div>
         </div>
