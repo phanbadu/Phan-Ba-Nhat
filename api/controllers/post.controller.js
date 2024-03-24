@@ -49,3 +49,18 @@ export const seeUser = async (req, res, next) => {
         next(error);
     }
 };
+
+export const seePost = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const posts = await Post.findById({ _id: id });
+
+        if (!posts || posts.length === 0) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
+
+        res.status(200).json(posts);
+    } catch (error) {
+        next(error);
+    }
+};

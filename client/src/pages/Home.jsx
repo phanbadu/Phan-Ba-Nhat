@@ -38,7 +38,7 @@ export default function Home() {
             "
             >
                 <Header />
-                <div className="flex gap-5 mt-10">
+                <div className="flex gap-5 mt-5">
                     <div className="w-8/12">
                         <User />
                         {listPost && listPost?.map((post, index) => <Posts post={post} key={index} />)}

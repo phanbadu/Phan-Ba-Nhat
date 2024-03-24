@@ -1,10 +1,19 @@
 import moment from 'moment';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Comments from './Comments';
 
 export default function Posts({ post }) {
+    const [comment, setComment] = useState(false);
+    const [idPost, setIdPost] = useState(null);
+
+    const handleModal = () => {
+        setComment(!comment);
+        setIdPost(post._id);
+    };
     return (
         <div className="w-full mt-5 bg-white flex items-center flex-col shadow-2xl rounded-lg overflow-hidden">
-            {post.image && <img className="w-full h-[40rem] object-cover object-center" src={post.image} alt="post" />}
+            {post.image && <img className="w-full h-96 object-cover object-center" src={post.image} alt="post" />}
             <div className="w-full px-5 pb-2 pt-5 border-b border-r border-l border-[#FF3F80] rounded-b-lg">
                 <div>
                     <div className="flex gap-3">
@@ -32,7 +41,10 @@ export default function Posts({ post }) {
                     <li className="ease-in active:scale-x-125 duration-200 flex-1 py-1 rounded-md flex justify-center items-center gap-2 cursor-pointer hover:bg-[#FF3F80] hover:text-white">
                         10 Like
                     </li>
-                    <li className="ease-in active:scale-x-125 duration-200 flex-1 py-1 rounded-md flex justify-center items-center gap-2 cursor-pointer hover:bg-[#FF3F80] hover:text-white">
+                    <li
+                        onClick={handleModal}
+                        className="ease-in active:scale-x-125 duration-200 flex-1 py-1 rounded-md flex justify-center items-center gap-2 cursor-pointer hover:bg-[#FF3F80] hover:text-white"
+                    >
                         10 Comment
                     </li>
                     <li className="ease-in active:scale-x-125 duration-200 flex-1 py-1 rounded-md flex justify-center items-center gap-2 cursor-pointer hover:bg-[#FF3F80] hover:text-white">
@@ -40,6 +52,7 @@ export default function Posts({ post }) {
                     </li>
                 </ul>
             </div>
+            {comment && <Comments setComment={setComment} idPost={idPost} />}
         </div>
     );
 }

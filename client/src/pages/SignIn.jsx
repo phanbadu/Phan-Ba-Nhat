@@ -62,7 +62,7 @@ export default function SignIn() {
                     onChange={handleChange}
                     className="focus:border-teal-300 ease-out duration-500 w-full px-4 py-2 text-md outline-none rounded-md border-solid border "
                     placeholder="Nhập password"
-                    type="pasword"
+                    type="password"
                     id="password"
                 />
                 <button

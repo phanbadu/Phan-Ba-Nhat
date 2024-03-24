@@ -18,7 +18,6 @@ export default function Users() {
         };
         fetchUsers();
     }, []);
-    console.log(users);
     return (
         <div className="w-full h-full py-10 bg-slate-200 py-3xl">
             <div
@@ -50,9 +49,6 @@ export default function Users() {
                                     <div className="flex py-4 px-10 text-sm justify-center flex-col gap-4">
                                         <button className="rounded-md hover:scale-105 ease-in duration-200 py-2 bg-[#3E50B4] text-white">
                                             Thêm bạn bè
-                                        </button>
-                                        <button className="bg-hint hover:scale-105 ease-in duration-200 text-white rounded-md py-2">
-                                            Xóa
                                         </button>
                                     </div>
                                 </div>
