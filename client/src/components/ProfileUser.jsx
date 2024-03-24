@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import Posts from './Posts';
-import PopularPosts from './PopularPosts';
 
 export default function ProfileUser() {
     const { id } = useParams();
@@ -80,21 +79,16 @@ export default function ProfileUser() {
                     </div>
                 )}
             </div>
-            <div className="w-full flex gap-5">
+            <div className="w-full grid grid-cols-3 gap-x-5 justify-items-center align-items-center relative">
                 {posts ? (
                     posts.map((post) => (
-                        <div className="w-8/12" key={post._id}>
+                        <div className="w-full" key={post._id}>
                             <Posts key={post._id} post={post} />
                         </div>
                     ))
                 ) : (
-                    <div className="flex py-2 justify-center items-center">
-                        <AiOutlineLoading3Quarters className="animate-spin text-md" />
-                    </div>
+                    <div className="mt-5">Loading...</div>
                 )}
-                <div className="w-4/12 mt-5">
-                    <PopularPosts />
-                </div>
             </div>
         </div>
     );

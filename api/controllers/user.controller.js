@@ -20,3 +20,17 @@ export const getUser = async (req, res, next) => {
         next(error);
     }
 };
+
+export const seeUsers = async (req, res, next) => {
+    try {
+        const users = await User.find({});
+        console.log(users);
+        const resultUser = users.map((user) => {
+            const { password, ...rest } = user._doc;
+            return rest;
+        });
+        res.status(200).json(resultUser);
+    } catch (error) {
+        next(error);
+    }
+};

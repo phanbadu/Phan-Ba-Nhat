@@ -23,15 +23,6 @@ export default function Header() {
                     <li>Home</li>
                 </Link>
                 <Link
-                    to="/friends"
-                    className={`${
-                        tab === '/friends' &&
-                        'border-b-2 text-[#FF3F80] ease-linear duration-200 border-[#FF3F80] text-primary'
-                    } flex items-center px-4 h-10`}
-                >
-                    <li>Friends</li>
-                </Link>
-                <Link
                     to="/users"
                     className={`${
                         tab === '/users' &&
@@ -46,7 +37,7 @@ export default function Header() {
                     <input
                         className="bg-white outline-none w-64 text-sm rounded-bl-lg h-full px-2 py-3"
                         type="text"
-                        placeholder="Tìm kiếm một điều gì đó ?"
+                        placeholder="Tìm bạn bè ?"
                     />
                     <button className="hover:bg-gray-100 bg-white rounded-tr-lg rounded-br-lg px-4">
                         <CiSearch className="font-semibold  text-[#FF3F80]" />

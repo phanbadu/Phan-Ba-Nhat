@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Posts({ post }) {
     return (
         <div className="w-full mt-5 bg-white flex items-center flex-col shadow-2xl rounded-lg overflow-hidden">
-            {post.image && <img className="w-full h-96 object-cover object-center" src={post.image} alt="post" />}
+            {post.image && <img className="w-full h-[40rem] object-cover object-center" src={post.image} alt="post" />}
             <div className="w-full px-5 pb-2 pt-5 border-b border-r border-l border-[#FF3F80] rounded-b-lg">
                 <div>
                     <div className="flex gap-3">
