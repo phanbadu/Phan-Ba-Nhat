@@ -16,7 +16,8 @@ export default function Header() {
                 <Link
                     to="/"
                     className={`${
-                        tab === '/' && 'border-b-2 text-[#FF3F80] ease-linear duration-500 border-[#FF3F80] text-primary'
+                        tab === '/' &&
+                        'border-b-2 text-[#FF3F80] ease-linear duration-200 border-[#FF3F80] text-primary'
                     } flex items-center px-4 h-10`}
                 >
                     <li>Home</li>
@@ -24,7 +25,8 @@ export default function Header() {
                 <Link
                     to="/friends"
                     className={`${
-                        tab === '/friends' && 'border-b-2 text-[#FF3F80] ease-linear duration-500 border-[#FF3F80] text-primary'
+                        tab === '/friends' &&
+                        'border-b-2 text-[#FF3F80] ease-linear duration-200 border-[#FF3F80] text-primary'
                     } flex items-center px-4 h-10`}
                 >
                     <li>Friends</li>
@@ -32,7 +34,8 @@ export default function Header() {
                 <Link
                     to="/users"
                     className={`${
-                        tab === '/users' && 'border-b-2 text-[#FF3F80] ease-linear duration-500 border-[#FF3F80] text-primary'
+                        tab === '/users' &&
+                        'border-b-2 text-[#FF3F80] ease-linear duration-200 border-[#FF3F80] text-primary'
                     } flex items-center px-4 h-10`}
                 >
                     <li>Users</li>

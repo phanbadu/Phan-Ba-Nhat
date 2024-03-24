@@ -37,3 +37,15 @@ export const see = async (req, res, next) => {
         next(error);
     }
 };
+
+export const seeUser = async (req, res, next) => {
+    try {
+        const { userId } = req.params;
+        const posts = await Post.find({ userId }).sort({
+            createdAt: -1,
+        });
+        res.status(201).json(posts);
+    } catch (error) {
+        next(error);
+    }
+};

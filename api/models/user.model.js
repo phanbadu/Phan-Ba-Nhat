@@ -1,11 +1,10 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(
     {
         username: {
             type: String,
             required: true,
-            unique: true,
         },
         email: {
             type: String,
@@ -18,19 +17,20 @@ const userSchema = new mongoose.Schema(
         },
         profilePicture: {
             type: String,
-            default: "https://images8.alphacoders.com/123/1236170.jpg",
+            default: 'https://images8.alphacoders.com/123/1236170.jpg',
         },
         story: {
             type: String,
-            default: "Zennin",
+            default: 'Zennin',
         },
         isAdmin: {
             type: Boolean,
             default: false,
-        }
-    }, { timestamps: true }
+        },
+    },
+    { timestamps: true },
 );
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 
 export default User;

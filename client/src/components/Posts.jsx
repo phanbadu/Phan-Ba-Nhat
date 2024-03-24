@@ -1,21 +1,26 @@
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 
 export default function Posts({ post }) {
     return (
         <div className="w-full mt-5 bg-white flex items-center flex-col shadow-2xl rounded-lg overflow-hidden">
-            <img className="w-full object-cover object-center" src={post.image} alt="post" />
+            {post.image && <img className="w-full h-96 object-cover object-center" src={post.image} alt="post" />}
             <div className="w-full px-5 pb-2 pt-5 border-b border-r border-l border-[#FF3F80] rounded-b-lg">
                 <div>
                     <div className="flex gap-3">
-                        <img
-                            className="cursor-pointer w-10 h-10 rounded-full object-cover object-center"
-                            src={post.profilePicture}
-                            alt="user"
-                        />
+                        <Link to={`/profile/${post.userId}`}>
+                            <img
+                                className="cursor-pointer w-10 h-10 rounded-full object-cover object-center"
+                                src={post.profilePicture}
+                                alt="user"
+                            />
+                        </Link>
                         <div className="flex flex-col justify-between">
-                            <h1 className="leading-none text-md text-[#3E50B4]">{post.username}</h1>
+                            <Link to={`/profile/${post.userId}`}>
+                                <h1 className="hover:underline leading-none text-md text-[#3E50B4]">{post.username}</h1>
+                            </Link>
                             <span className="flex items-center gap-2 text-hint text-xs">
-                                {moment(post.createdAt).fromNow()}
+                                {`${moment(post.createdAt).fromNow()}`}
                             </span>
                         </div>
                     </div>
